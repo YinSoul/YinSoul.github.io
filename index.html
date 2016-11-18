@@ -1,1 +1,59 @@
-hello world
+RN入门分享 Learn once，Write anywhere!
+
+1.Homebrew和npm 和react-native-cli是什么？
+Homebrew就是mac下的包管理器 类似linux下的apt-get、yum Windows 上的 Chocolatey。
+npm是node.js的包管理工具，跨平台。Node 是一个JavaScript 解释器。
+react-native-cli：React Native的命令行工具用于执行创建、初始化、更新项目、运行打包服务（packager）等任务。
+2.ES6
+ECMAScript 6.0（简称ES6）是JavaScript语言的下一代标准。
+ES6入门
+http://es6.ruanyifeng.com
+ES5 ES6 对比
+http://bbs.reactnative.cn/topic/15/react-react-native-的es5-es6写法对照表
+*3.工程目录以及react的基础和生命周期(HelloWorldDemo案例)
+	1>android文件夹
+	2>index.android.js 安卓入口文件
+	3>index.ios.js	ios入口文件
+	4>ios文件夹	
+	5>node_modules	node需要的模块和通过npm下载的模块会安装在这个目录下
+	6>package.json	记录应用的细节内容 类似cocoapods的Podfile 依赖包管理
+	
+	1>引入 import {自定义控件} from './控件.js'
+	2>render 渲染控件
+	3>StyleSheet 样式名基本上是遵循了web上的CSS的命名 
+		http://www.tuicool.com/articles/a6Rjmi2
+	4>注册组件AppRegistry  
+	
+	react native 生命周期
+	http://www.360doc.com/content/16/0911/08/35331283_589947241.shtml
+React Native组件的生命周期，经历了Mount->Update->Unmount这三个大的过程，
+即从创建到销毁的过程.
+	A>
+	1>constructor
+	constructor(props) {
+		super(props);
+		//const { navigator,imageUrl } = this.props;
+		this.state = {
+ 			showLoading: false
+		}
+	}
+	2>componentWillMount
+	3>render
+	4>componentDidMount
+	B>
+	componentWillReceiveProps    
+	//指父元素对组件的props或state进行了修改
+	shouldComponentUpdate    
+	//一般用于优化，可以返回false或true来控制是否进行渲染
+	componentWillUpdate
+	//组件刷新前调用，类似componentWillMount
+	componentDidUpdate
+	//更新后
+	C>
+	componentWillUnmount
+	//用于清理一些无用的内容，如：点击事件Listener，只有一	个过程
+*4.Chrome开发者工具
+在开发者菜单中选择"Debug JS Remotely"选项，即可以开始在Chrome中调试JavaScript代码。点击这个选项的同时会自动打开调试页面 http://localhost:8081/debugger-ui.
+*5.react-native-tab-navigator插件和Demo分享
+cd 工程目录
+npm install react-native-tab-navigator –save
